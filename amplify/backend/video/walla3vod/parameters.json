@@ -1,0 +1,17 @@
+{
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "GraphQLAPIId": {
+        "Fn::GetAtt": [
+            "apiWalla3API",
+            "Outputs.GraphQLAPIIdOutput"
+        ]
+    },
+    "GraphQLEndpoint": {
+        "Fn::GetAtt": [
+            "apiWalla3API",
+            "Outputs.GraphQLAPIEndpointOutput"
+        ]
+    }
+}

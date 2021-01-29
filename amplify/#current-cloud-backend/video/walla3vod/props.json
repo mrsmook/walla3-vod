@@ -1,0 +1,37 @@
+{
+    "shared": {
+        "resourceName": "walla3vod"
+    },
+    "template": {
+        "name": "Amplify_Video_System_Ott_Hls_Ts_Avc_Aac.json"
+    },
+    "contentDeliveryNetwork": {
+        "enableDistribution": false
+    },
+    "parameters": {
+        "authRoleName": {
+            "Ref": "AuthRoleName"
+        },
+        "GraphQLAPIId": {
+            "Fn::GetAtt": [
+                "apiWalla3API",
+                "Outputs.GraphQLAPIIdOutput"
+            ]
+        },
+        "GraphQLEndpoint": {
+            "Fn::GetAtt": [
+                "apiWalla3API",
+                "Outputs.GraphQLAPIEndpointOutput"
+            ]
+        }
+    },
+    "permissions": {
+        "permissionSchema": [
+            "admin"
+        ]
+    },
+    "cms": {
+        "overrideSchema": true,
+        "editAPI": true
+    }
+}

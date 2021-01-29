@@ -1,0 +1,24 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-walla3-dev-152454-authRole",
+      "UnauthRoleArn": "arn:aws:iam::876119398126:role/amplify-walla3-dev-152454-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::876119398126:role/amplify-walla3-dev-152454-authRole",
+      "Region": "eu-west-3",
+      "DeploymentBucketName": "amplify-walla3-dev-152454-deployment",
+      "UnauthRoleName": "amplify-walla3-dev-152454-unauthRole",
+      "StackName": "amplify-walla3-dev-152454",
+      "StackId": "arn:aws:cloudformation:eu-west-3:876119398126:stack/amplify-walla3-dev-152454/233571f0-6246-11eb-bd6a-06159762b370"
+    },
+    "categories": {
+      "auth": {
+        "walla330ae08d2": {}
+      },
+      "video": {
+        "walla3vod": {
+          "s3UUID": "dyjx0q8l"
+        }
+      }
+    }
+  }
+}

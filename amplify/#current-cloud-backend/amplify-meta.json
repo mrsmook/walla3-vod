@@ -1,0 +1,105 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-walla3-dev-152454-authRole",
+      "UnauthRoleArn": "arn:aws:iam::876119398126:role/amplify-walla3-dev-152454-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::876119398126:role/amplify-walla3-dev-152454-authRole",
+      "Region": "eu-west-3",
+      "DeploymentBucketName": "amplify-walla3-dev-152454-deployment",
+      "UnauthRoleName": "amplify-walla3-dev-152454-unauthRole",
+      "StackName": "amplify-walla3-dev-152454",
+      "StackId": "arn:aws:cloudformation:eu-west-3:876119398126:stack/amplify-walla3-dev-152454/233571f0-6246-11eb-bd6a-06159762b370"
+    }
+  },
+  "auth": {
+    "walla330ae08d2": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-walla3-dev-152454-deployment/amplify-cfn-templates/auth/walla330ae08d2-cloudformation-template.yml",
+        "logicalId": "authwalla330ae08d2"
+      },
+      "lastPushTimeStamp": "2021-01-29T15:40:31.239Z",
+      "output": {
+        "AppClientSecret": "1469poc5r0h4mrni66rmida6dhq1ndrtbjb61cbdi9f2sq3cd44f",
+        "UserPoolId": "eu-west-3_glAfKR5z7",
+        "AppClientIDWeb": "1shebij1r7l8qu1ps15dghjini",
+        "AppClientID": "1khfk1voga0c87o1n2hod5s8hc",
+        "IdentityPoolId": "eu-west-3:3db5a887-e568-45da-9c66-de96e79f8775",
+        "IdentityPoolName": "walla330ae08d2_identitypool_30ae08d2__dev",
+        "UserPoolName": "walla330ae08d2_userpool_30ae08d2"
+      },
+      "lastPushDirHash": "5elH/oQyjyH9xGLZiIJqewl7m2c="
+    },
+    "userPoolGroups": {
+      "service": "Cognito-UserPool-Groups",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "walla330ae08d2",
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-walla3-dev-152454-deployment/amplify-cfn-templates/auth/template.json",
+        "logicalId": "authuserPoolGroups"
+      },
+      "lastPushTimeStamp": "2021-01-29T15:40:31.239Z",
+      "output": {
+        "AdminGroupRole": "arn:aws:iam::876119398126:role/eu-west-3_glAfKR5z7-AdminGroupRole"
+      },
+      "lastPushDirHash": "5o8I7ZNqCHcb8mgo0i6c7vj50WQ="
+    }
+  },
+  "api": {
+    "Walla3API": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authwalla330ae08d2"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "jahi7kqbyjdtnbzyiowgvybaoq",
+        "GraphQLAPIEndpointOutput": "https://wnm66kul6zbhdliyo2r7qd3fde.appsync-api.eu-west-3.amazonaws.com/graphql"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-walla3-dev-152454-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiWalla3API"
+      },
+      "lastPushTimeStamp": "2021-01-29T15:40:31.239Z",
+      "lastPushDirHash": "VyNvGMm4IMzdxIH4UXUiIyblmxA="
+    }
+  },
+  "video": {
+    "walla3vod": {
+      "service": "video",
+      "serviceType": "video-on-demand",
+      "providerPlugin": "awscloudformation",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-walla3-dev-152454-deployment/amplify-cfn-templates/video/walla3vod-vod-workflow-template.yaml",
+        "logicalId": "videowalla3vod"
+      },
+      "lastPushTimeStamp": "2021-01-29T15:40:31.239Z",
+      "output": {
+        "oVodOutputUrl": "walla3vod-dev-output-dyjx0q8l.s3.eu-west-3.amazonaws.com",
+        "oVODOutputS3": "walla3vod-dev-output-dyjx0q8l",
+        "oVODInputS3": "walla3vod-dev-input-dyjx0q8l"
+      },
+      "lastPushDirHash": "kUITuKC23EoeUQwNgtkwyd9V/K4="
+    }
+  }
+}
